@@ -1,6 +1,12 @@
 import random as rand
 
 ordlista = ["cykelhjul", "mobilmast", "test", "skola", "ö"]
+möjliga_bokstäver = []
+for k in ordlista:
+    for l in k:
+        if not l.upper() in möjliga_bokstäver:
+            möjliga_bokstäver.append(l.upper())
+
 while True:
     svar_sträng = ordlista[rand.randint(0, len(ordlista) - 1)].upper()
     svar = []
@@ -23,6 +29,8 @@ while True:
             if len(gissning) == 1:
                 if gissning in felgissningar or gissning in svar_synlig:
                     print("Prova något nytt. ", end=" ")
+                elif not gissning in möjliga_bokstäver:
+                    print("Tecknet finns inte i något ord i svenska ordboken. ", end=" ")
                 else:
                     break
             else:
