@@ -1,6 +1,8 @@
 import random as rand
+import json
 
-ordlista = ["cykelhjul", "mobilmast", "test", "skola", "ö"]
+with open("ordlista.jsonl", "r", encoding="utf-8") as file:
+    ordlista = [line.strip().upper() for line in file]
 möjliga_bokstäver = []
 for k in ordlista:
     for l in k:
