@@ -58,6 +58,6 @@ while True:
     else:
         print("\nDu förlorade :-(")
         print(f"Ordet var {''.join(svar)}")
-    if not input("Vill du spela igen? (j/n) ") == "j":
+    if not input("Vill du spela igen? (j/n) ").lower() == "j":
         break
 print("Programmet avslutades normalt.")
